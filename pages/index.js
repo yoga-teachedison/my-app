@@ -2,7 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+import { createHash } from "crypto";
+
 export default function Home() {
+  const abc = createHash("sha256").update("str").digest("hex")
+  console.log("abc", abc)
   return (
     <div className={styles.container}>
       <Head>
